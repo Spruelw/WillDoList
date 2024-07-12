@@ -53,13 +53,13 @@ a {
     justify-content: space-between;
     align-items: center;
     font-size: .8rem;
-    width: 93%;
+    width: 90%;
     margin:auto;
 }
 
 .nav-pencil{
     height: 15px;
-    margin-bottom: 4px;
+    margin-bottom: 3px;
 }
 
 .logo{
@@ -70,7 +70,7 @@ a {
 
 .nav-bar .logo p{
     font-weight: 600;
-    font-size: .7rem;
+    font-size: .8rem;
     margin: 0;
 }
 
@@ -81,7 +81,7 @@ a {
    align-items: center;
 }
 .links p{
-     font-size: .7rem; 
+     font-size: .6rem; 
      text-wrap: nowrap;
      font-weight: 600;
 }
@@ -96,17 +96,17 @@ a {
     background-color: transparent;
     opacity: 1;
     color: var(--dark-brown);
-    width: 100%;
-    height: 100%;
+   width: fit-content;
     max-width: 80px;
-    font-size: .5rem;
+    font-size: .6rem;
     font-weight: 700;
     padding-block: 3px;
-    padding-inline: 10px;
+    padding-inline: 6px;
     border-radius: 5px;
     border: 1px solid #8c8381;
     box-shadow: 1px 1px 2px #a69e9c;
     letter-spacing: .6px;
+    text-align: center;
 }
 
 .hero{
