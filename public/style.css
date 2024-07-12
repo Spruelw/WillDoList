@@ -6,7 +6,7 @@
 --dark-brown: #332B29;
 --tan: #A49D91;
 --teal: #7e9994;
---square-color: #d4c7b18e;
+--square-color: #d4c7b16b;
 }
 
  *{
@@ -52,8 +52,8 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: .7rem;
-    width: 90%;
+    font-size: .8rem;
+    width: 93%;
     margin:auto;
 }
 
@@ -81,7 +81,7 @@ a {
    align-items: center;
 }
 .links p{
-     font-size: .6rem; 
+     font-size: .7rem; 
      text-wrap: nowrap;
      font-weight: 600;
 }
@@ -461,7 +461,7 @@ width: 40%;
     flex-direction: column;
     gap: 8px;
     width:60%;
-    margin-left: 25%;
+    margin-left: 20%;
 }
 
 .buttons-container button{
