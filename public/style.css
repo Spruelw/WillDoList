@@ -52,7 +52,7 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: .6rem;
+    font-size: .7rem;
     width: 90%;
     margin:auto;
 }
@@ -70,7 +70,7 @@ a {
 
 .nav-bar .logo p{
     font-weight: 600;
-    font-size: .6rem;
+    font-size: .7rem;
     margin: 0;
 }
 
@@ -81,7 +81,7 @@ a {
    align-items: center;
 }
 .links p{
-     font-size: .55rem; 
+     font-size: .6rem; 
      text-wrap: nowrap;
      font-weight: 600;
 }
@@ -168,7 +168,7 @@ a {
     padding: 4px;
     padding-inline: 10px;
     border: none;
-    box-shadow: 2px 2px 4px #685e5c;
+    box-shadow: 1px 1px 2px #685e5c;
     letter-spacing: .8px;   
 }
 
@@ -460,7 +460,7 @@ width: 40%;
     margin-top: 40px;
     flex-direction: column;
     gap: 8px;
-    width:40%;
+    width:60%;
     margin-left: 25%;
 }
 
