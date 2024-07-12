@@ -266,7 +266,7 @@ passport.use("local", new Strategy(async function verify(username, password, cb)
  passport.use("google", new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_SECRET,
-    callbackURL: "http://localhost:3010/googleAuthCb"},
+    callbackURL: "/googleAuthCb"},
      async(accessToken, refreshToken, profile, cb)=>{
         try{
             var result = await db.query("SELECT * FROM users WHERE email = $1", [profile.email])
