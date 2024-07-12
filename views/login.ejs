@@ -1,0 +1,36 @@
+<%- include("../partials/header.ejs")  %>
+
+<body class="signup-or-login-body">
+    <div class="container">
+        <div class="tabs-container">
+            <div class="tab tab-login selected-tab">
+                <a href="/login"><p>Login</p></a>
+            </div>
+            <div class="tab tab-sign-up ">
+                <a href="/signUp"><p>Sign up</p></a>
+            </div>
+        </div>
+        <a href="/"class="cross"><img  src="./images/cross-svgrepo-com.svg"></a>
+        <div class="inputs">
+            <form method="POST" action="/login" id="loginForm">
+                <% if(locals.messages) {%>
+                    <p class="login-error"><%= locals.messages %></p>
+                    <%}%>
+                <input type="email" placeholder="email" name="username">
+                <input type="text" placeholder="password" name="password" >
+               </form>
+            <div class="buttons-container">
+                <button type="submit" class="signup-or-login-button hoverUp" form="loginForm"> Log-in</button>
+                <a  class="google-login hoverUp" href="/googleAuth"> <img src="./images/google.svg" alt="" width="10px"> in with google</a>
+            </div>
+     
+        </div>
+        <div class="think-plan-execute">
+            <p>THINK,</p>
+            <p>PLAN,</p>
+            <p>EXECUTE!</p>
+        </div>
+    </div>
+    <script src="./static.js"></script>
+</body>
+</html>

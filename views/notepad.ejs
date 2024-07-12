@@ -1,0 +1,75 @@
+<%- include("../partials/header.ejs") %>
+<body class="notebook">
+    <div class="nav-bar">
+        <div class="logo">
+            <img class="nav-pencil" src="/images/pencil-tip-svgrepo-com.svg">
+            <p>Will-Do List</p>
+        </div>
+        <div class="links">
+        <a href="/"><p class="selected-link" >Home</p></a>
+        <a href="/myLists"><p class="selected-link">My lists</p></a>
+        
+        </div>
+       <a href="/logout"> <button class="log-out-button hoverUp">Log out</button></a>
+    </div>
+    <form method="post" action="/notepad/?number=<%=notepadNumber %>">
+        <div class="pad"> 
+             
+            <div class="pad-header"> 
+               <canvas id="confetti-canvas"></canvas>
+                <input  type="submit" value="Save" class="save-button">
+                <div class="progress-container">
+                    <img src="/images/Star2.png">
+                    
+                    <p>0%</p>
+                </div>
+           
+            </div>
+            <div class="pad-redline"></div>
+
+            <div class="pad-body">
+            
+                <div class="pad-title">
+                    <% if(locals.data){ %>
+                    <input class="pad-title" type="text" name="title" placeholder="enter title"  value="<%= data.title %>"required>
+                    <% } else{%> 
+                        <input class="pad-title" type="text" name="title" placeholder="enter title" required>
+                    <% } %>
+                </div>
+                
+
+                <% if (locals.data){%>
+                    <% var i = 1 %>
+                    <% data.lines.forEach((item)=>{%>
+                    
+                    <div class="pad-line">
+                    
+                         <%if(item.checkStatus === true){ %>
+                            <input type="checkbox" class="checkbox hidden" value="checked" name="checkbox-<%-i %>" id="checkbox-<%-i %>" checked>
+                        <% } else{%>
+                            <input type="checkbox" class="checkbox hidden" value="checked" name="checkbox-<%-i %>" id="checkbox-<%-i %>">
+                            <% } %>
+
+                        <% if(item.text != null){ %>
+                        <input type="text" class="text-box" name="textBox-<%-i %>" id="textBox-<%-i %>" value= " <%- item.text %>">
+                        <% }else{ %>
+                            <input type="text" class="text-box" name="textBox-<%-i %>" id="textBox-<%-i %>">
+                        <% } i++%>
+                    </div>
+
+                <% })}else{ %>
+                    <% for(let i = 1; i < 21; i++){ %>
+                        <div class="pad-line">
+                               <input type="checkbox" class="checkbox hidden" value="checked" name="checkbox-<%-i %>" id="checkbox-<%-i %>">
+                               <input type="text" class="text-box" name="textBox-<%-i %>" id="textBox-<%-i %>">
+                       </div>
+
+
+               <% }} %>
+            </div>
+        </div>
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+    <script src="/static.js"></script>
+    
+</body>

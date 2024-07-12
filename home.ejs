@@ -1,0 +1,55 @@
+<%- include("./partials/header.ejs")  %>
+<body class="home">
+    <%for( let i = 0; i < 30; i++){ %>
+        <%let backgroundSquareWidth = Math.round(Math.random() * 7)%>
+        <% let backgroundSquarePosition = Math.round(Math.random() * 90) %>
+        <div class="background-square" style="width:<%=` ${backgroundSquareWidth}%; left:${backgroundSquarePosition}%;`%>" ></div>
+    <%}%>
+    <div class="nav-bar">
+        <div class="logo">
+            <img class="nav-pencil" src="./images/pencil-tip-svgrepo-com.svg">
+            <p>Will-Do List</p>
+        </div>
+        <div class="links">
+        <a href="/"><p class="selected-link hoverUp">Home</p></a>
+        <a href="/myLists" class="hoverUp"> <p>My lists</p></a>
+        
+        </div>
+        <!--changes button login or logout  -->
+        <% if(locals.user == true){ %>
+            <a href="/logout" class="hoverUp"> <button class="log-out-button">Log out</button></a>
+       <% }else{ %>
+       <a href="/login" class="hoverUp"> <button class="log-in-button">Log in</button></a>
+       <%}%>
+    </div>
+
+    <div class="hero">
+        <div class="text">
+            <h1>Create a List!</h1>
+             <h2>Accomplish your goal step by step.</h2>
+           <a href="/signUp"><button class="sign-up hoverUp"> Sign up</button></a>
+        </div>
+        <div class="hero-img">
+           
+            <img src="./images/hero-list-biggest.png" alt="">
+        </div>
+    </div>
+
+    <div class="keep-in-head">
+        <h2>You don't have to keep everything in your head!</h2>
+        <div class="flex-container">
+            <img src="./images/undraw_woman_img.png">
+            <p>Transform mental clutter into structured plans.</p>
+        </div>
+    </div>
+
+    <div class="track-progress-container">
+        <div class="text-container">
+            <h2>Track your progress</h2>
+            <p>Feel motivated by the percentage of completed inputs. </p>
+        </div>
+        <img src="./images/progress_img.png">
+    </div>
+    <script src="./static.js"></script>
+</body>
+</html>

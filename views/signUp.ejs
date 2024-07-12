@@ -1,0 +1,38 @@
+<%- include("../partials/header.ejs")  %>
+
+<body class="signup-or-login-body">
+    <div class="container">
+        <div class="tabs-container">
+            <div class="tab tab-login ">
+                <a href="/login"><p>Login</p></a>
+            </div>
+            <div class="tab tab-sign-up selected-tab">
+                <a href="/sign-up"><p>Sign up</p></a>
+            </div>
+        </div>
+        <a href="/" class="cross"><img  src="./images/cross-svgrepo-com.svg"></a>
+        
+    
+                <div class="inputs">
+                <form method="POST" action="/signUp" id="signUpForm">
+                <input type="email" placeholder="email" name="email">
+                <input type="text" placeholder="password" name="password" >
+                <input type="text" placeholder="re-enter password" name="password2"> 
+            </form>
+                <div class="buttons-container">
+                    <button  type="submit" class="signup-or-login-button hoverUp" form="signUpForm"> Sign up</button>
+                    <a  class="google-login hoverUp" href="/googleAuth"> <img src="./images/google.svg" alt="" width="10px"> in with google</a>
+                </div>
+            </div>
+            
+        
+        <div class="think-plan-execute">
+            <p>THINK,</p>
+            <p>PLAN,</p>
+            <p>EXECUTE!</p>
+        </div>
+   
+    </div>
+    <script src="./static.js"></script>
+</body>
+</html>

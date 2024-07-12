@@ -1,0 +1,42 @@
+<%- include("../partials/header.ejs") %>
+
+
+
+<body class="myLists-body">
+    <%- include("../partials/navBar.ejs") %>
+
+    <h1>My Lists</h1>
+
+    <div class="my-lists-flex-container">
+        <% for (let i = 0; i < 3; i++){%>
+            <% if(locals.userNotepads){ %>
+            <% var match = false; %>
+            <% userNotepads.forEach((item)=>{ %>
+                <% if(item.notepad_number == i){ %>
+                        <% match = true %>
+                        <a class=" list-item hoverUp" href="/notepad/?number=<%= i %>">
+                            <h3 class="list-title"> <%= item.data.title%></h3>
+                            <img src="./images/star2.png">
+                            <p><%= item.data.percentageComplete%></p>
+                        </a>
+                    <% }%>
+                <% }) %>
+                <% if(match != true){ %>
+                    <a class=" list-item  empty" href="/notepad/?number=<%= i%>">
+                        <div class="plus"> 
+                            <img src="./images/plus.svg">
+                        </div>
+                        <p>New list</p>
+                    </a>
+                    <% } %>
+            <% }else{ %>
+                <a class=" list-item  empty" href="/notepad/?number=<%= i%>">
+                    <div class="plus"> 
+                        <img src="./images/plus.svg">
+                    </div>
+                    <p>New list</p>
+                </a>
+                <% } %>
+        <% } %>
+    </div>
+</body>
