@@ -8,7 +8,7 @@ import passport from "passport";
 import { Strategy } from 'passport-local';
 import GoogleStrategy from "passport-google-oauth2"
 
-var session =cookie-session()
+
 const app = express();
 const port = 3010;
 const saltRounds = 10
@@ -26,7 +26,7 @@ db.connect();
 
 app.use(express.static("./public"))
 
-app.use(session({
+app.use(cookie-session({
     name : "session",
     secret: process.env.SESSION_SECRET
 }))
