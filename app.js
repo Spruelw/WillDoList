@@ -12,7 +12,7 @@ import GoogleStrategy from "passport-google-oauth2"
 const app = express();
 const port = 3010;
 const saltRounds = 10
-var session = cookie-session();
+
 
 var db = new pg.Client({
 host: process.env.PG_HOST,
@@ -26,7 +26,7 @@ db.connect();
 
 app.use(express.static("./public"))
 
-app.use(session({
+app.use(cookie-session({
     secret: process.env.SESSION_SECRET
 }))
 app.use(express.urlencoded({extended: true}))
