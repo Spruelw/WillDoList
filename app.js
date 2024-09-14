@@ -27,7 +27,7 @@ db.connect();
 app.use(express.static("./public"))
 
 app.use(session({
-    name : "session"
+    name : "session",
     secret: process.env.SESSION_SECRET
 }))
 app.use(express.urlencoded({extended: true}))
