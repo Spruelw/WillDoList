@@ -3,7 +3,7 @@ import express, { json } from "express";
 import pg from "pg";
 import 'dotenv/config';
 import bcrypt from "bcrypt"
-import cookie-session from "cookie-session";
+import "cookie-session";
 import passport from "passport";
 import { Strategy } from 'passport-local';
 import GoogleStrategy from "passport-google-oauth2"
@@ -12,6 +12,7 @@ import GoogleStrategy from "passport-google-oauth2"
 const app = express();
 const port = 3010;
 const saltRounds = 10
+var session = cookie-session();
 
 var db = new pg.Client({
 host: process.env.PG_HOST,
@@ -25,7 +26,7 @@ db.connect();
 
 app.use(express.static("./public"))
 
-app.use(cookie-session({
+app.use(session({
     secret: process.env.SESSION_SECRET
 }))
 app.use(express.urlencoded({extended: true}))
